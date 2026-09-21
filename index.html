@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Data Redundancy Removal System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Data Redundancy Removal System</h1>
+        <p>Cloud-Based Data Validation and Duplicate Detection</p>
+    </header>
+
+    <div id="message" class="message"></div>
+
+    <section class="card">
+
+        <h2>Add New Data</h2>
+
+        <form id="dataForm">
+
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="data">Data</label>
+            <textarea
+                id="data"
+                rows="4"
+                placeholder="Enter project or other data"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Validate & Store Data
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>Verified Unique Records</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+
+            <!-- Starts EMPTY -->
+            <tbody id="recordTable">
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>How the System Works</h2>
+
+        <ul>
+            <li>✔ User enters new information.</li>
+            <li>✔ The system validates the information.</li>
+            <li>✔ Existing records are checked.</li>
+            <li>✔ Duplicate data is rejected.</li>
+            <li>✔ Unique data is stored.</li>
+        </ul>
+
+    </section>
+
+</div>
+
+
+<!-- IMPORTANT: script.js is inside static folder -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
